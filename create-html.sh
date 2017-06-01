@@ -63,7 +63,13 @@ echo '<b>local ip</b> - ' $LOCAL_IP '<br>' >> /var/www/html/index.html
 echo '<b>public hostname</b> - ' $PUBLIC_HOSTNAME '<br>' >> /var/www/html/index.html
 echo '<b>public ip</b> - ' $PUBLIC_IP '<br>' >> /var/www/html/index.html
 echo '<b>region</b> - ' $AWS_REGION '<br>' >> /var/www/html/index.html
-echo '<b>availability zone</b> - ' $AVAILABILITY_ZONE '<br>' >> /var/www/html/index.html
+echo '<b>availability zone</b> - ' $AVAILABILITY_ZONE '<br><br>' >> /var/www/html/index.html
 echo '</div>' >> /var/www/html/index.html
+echo '<div>' >> /var/www/html/index.html
+echo '<footer class="footer">' >> /var/www/html/index.html
+echo '<div class="container">' >> /var/www/html/index.html
+echo '<p class="text-muted"><a href="https://www.thinkahead.com/">AHEAD</a></p>' >> /var/www/html/index.html
+echo '</div>' >> /var/www/html/index.html
+echo '</footer>' >> /var/www/html/index.html
 echo '</body>' >> /var/www/html/index.html
 echo '</html>' >> /var/www/html/index.html
