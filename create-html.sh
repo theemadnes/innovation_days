@@ -46,7 +46,6 @@ echo '<p>Where in the US is your EC2 instance?</p>' >> /var/www/html/index.html
 echo '</div>' >> /var/www/html/index.html
 echo '</div>' >> /var/www/html/index.html
 echo '<div class="center-block" id="regions_div" style="width: 900px; height: 500px;"></div>' >> /var/www/html/index.html
-echo '<h4>INSTANCE DETAILS</h4><br>' >> /var/www/html/index.html
 # get instance details from instance metadata
 INSTANCE_ID="$(curl http://169.254.169.254/latest/meta-data/instance-id)"
 INSTANCE_TYPE="$(curl http://169.254.169.254/latest/meta-data/instance-type)"
@@ -55,6 +54,8 @@ LOCAL_IP="$(curl http://169.254.169.254/latest/meta-data/local-ipv4)"
 PUBLIC_HOSTNAME="$(curl http://169.254.169.254/latest/meta-data/public-hostname)"
 PUBLIC_IP="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 AVAILABILITY_ZONE="$(curl http://169.254.169.254/latest/meta-data/placement/availability-zone)"
+echo '<div class="container">' >> /var/www/html/index.html
+echo '<h4>INSTANCE DETAILS</h4><br>' >> /var/www/html/index.html
 echo '<b>instance id</b> - ' $INSTANCE_ID '<br>' >> /var/www/html/index.html
 echo '<b>instance type</b> - ' $INSTANCE_TYPE '<br>' >> /var/www/html/index.html
 echo '<b>local hostname</b> - ' $LOCAL_HOSTNAME '<br>' >> /var/www/html/index.html
@@ -63,5 +64,6 @@ echo '<b>public hostname</b> - ' $PUBLIC_HOSTNAME '<br>' >> /var/www/html/index.
 echo '<b>public ip</b> - ' $PUBLIC_IP '<br>' >> /var/www/html/index.html
 echo '<b>region</b> - ' $AWS_REGION '<br>' >> /var/www/html/index.html
 echo '<b>availability zone</b> - ' $AVAILABILITY_ZONE '<br>' >> /var/www/html/index.html
+echo '</div>' >> /var/www/html/index.html
 echo '</body>' >> /var/www/html/index.html
 echo '</html>' >> /var/www/html/index.html
